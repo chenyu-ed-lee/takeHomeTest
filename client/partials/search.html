@@ -1,7 +1,7 @@
 <div ng-controller="appController">
-	<h2>Search for a physician or organization</h2>
+	<h3 class="text-center">Search for a physician or organization</h3>
 	<div>
-		<input type="search" placeholder="Search for a doctor, physician, or organization by name" ng-model="search.$" />
+		<input type="search" class="form-control" placeholder="Search for a doctor, physician, or organization by name" ng-model="search.$" />
 	</div>
 	<div ng-show="search.$.length">
 		<ul>
@@ -12,6 +12,4 @@
 			</li>
 		</ul>
 	</div>
-	
-
 </div>
