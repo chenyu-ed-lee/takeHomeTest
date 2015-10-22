@@ -1,0 +1,17 @@
+<div ng-controller="appController">
+	<h2>Search for a physician or organization</h2>
+	<div>
+		<input type="search" placeholder="Search for a doctor, physician, or organization by name" ng-model="search.$" />
+	</div>
+	<div ng-show="search.$.length">
+		<ul>
+			<li ng-repeat="provider in providers | filter:search">
+				<a href="" ng-click="showLoading()">
+					<p>{{provider.first_name}} {{provider.last_name}} {{provider.organization_name}} - {{provider.npi}}</p>
+				</a>
+			</li>
+		</ul>
+	</div>
+	
+
+</div>

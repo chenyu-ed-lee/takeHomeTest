@@ -1,0 +1,27 @@
+<div ng-controller="appController">
+	<h2>Voluntary Participation</h2>
+	<p>
+		Participation in this study is voluntary. If you do not wish to participate, there will be no penalty of any kind
+	</p>
+	<p>
+		To confirm your intent to enroll in this study, please complete the form below.
+	</p>
+	<form name="form">
+		<label>First Name</label>
+		<input type="text" placeholder="John" name="firstName" ng-model="newEntry.firstName" required /><br>
+
+		<label>Last Name</label>
+		<input type="text" placeholder="Doe" name="lastName" ng-model="newEntry.lastName" required /><br>
+
+		<label>What city were you born in?</label>
+		<input type="text" placeholder="City Name" name="city" ng-model="newEntry.city" required /><br>
+
+		<input type="checkbox" required>I consent to participate in this study</input><br>
+
+		<button><a href="#">Back</a></button>
+
+		<input type="submit" value="Complete the form to continue enrollment" ng-click="addNew()" ng-disabled="form.$invalid" />
+	</form>
+
+</div>
+
