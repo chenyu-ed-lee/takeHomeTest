@@ -50,7 +50,10 @@ myApp.controller("appController", function($scope){
 		$scope.newEntry = {};
 	}
 
-	$scope.showLoading = function(){
-		console.log("hi");
+	$scope.showLoading = function(first_name, last_name, organization_name){
+		console.log(first_name + " " + last_name);
+		console.log(organization_name);
 	}
+
+	$scope.quantity = 5;
 })

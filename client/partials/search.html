@@ -1,17 +1,41 @@
 <div ng-controller="appController">
 	<h3 class="text-center">Search for a physician or organization</h3>
 	<div>
-		<input type="search" class="form-control" placeholder="Search for a doctor, physician, or organization by name" ng-model="search.$" />
+		<input id="searchbox" type="search" class="form-control" placeholder="Search for a doctor, physician, or organization by name" ng-model="search.$" />
 	</div>
-	<div ng-show="search.$.length">
-		<ul>
-			<li ng-repeat="provider in providers | filter:search">
-				<a href="" ng-click="showLoading()">
-					<p>
-						{{provider.first_name}} {{provider.last_name}} {{provider.organization_name}} - {{provider.npi}}
-					</p>
-				</a>
-			</li>
-		</ul>
+	<div id="allResults" ng-show="search.$.length">
+		<div ng-repeat="provider in providers | filter:search | limitTo:quantity" class="results">
+			<a href="" class="loadingDiv" ng-click="showLoading(provider.first_name, provider.last_name, provider.organization_name)">
+				<ul class="special">
+					<li class="special">
+						<img src="../images/circle.png">
+					</li>
+					<li class="special">
+						<p>{{provider.first_name}} {{provider.last_name}} {{provider.organization_name}}</p>
+					</li>
+					<li class="special"><img src="../images/arrow.png"></li>
+				</ul>
+			</a>
+		</div>
+		<div id="center_this">
+			<ul class="pagination">
+				<li>
+					<a href="#" aria-label="Previous">
+						<span aria-hidden="true">&laquo;</span>
+					</a>
+				</li>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+				<li><a href="#">6</a></li>
+				<li>
+					<a href="#" aria-label="Next">
+						<span aria-hidden="true">&raquo;</span>
+					</a>
+				</li>
+			</ul>
+		</div>
 	</div>
 </div>
