@@ -7,7 +7,9 @@
 		<ul>
 			<li ng-repeat="provider in providers | filter:search">
 				<a href="" ng-click="showLoading()">
-					<p>{{provider.first_name}} {{provider.last_name}} {{provider.organization_name}} - {{provider.npi}}</p>
+					<p>
+						{{provider.first_name}} {{provider.last_name}} {{provider.organization_name}} - {{provider.npi}}
+					</p>
 				</a>
 			</li>
 		</ul>
